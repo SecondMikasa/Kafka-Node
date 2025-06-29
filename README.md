@@ -40,10 +40,15 @@ I know the latest versions of Kafka has stripped it's dependency from `Zookeeper
 ### Kafka
 ```bash
 docker run -p 9092:9092 `
--e KAFKA_ZOOKEEPER_CONNECT=192.168.29.234:2181 `
--e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://192.168.29.234:9092 `
+-e KAFKA_ZOOKEEPER_CONNECT=<Your IP Address>:2181 `
+-e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://<Your IP Address>:9092 `
 -e KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 `
 confluentinc/cp-kafka:7.2.1
+```
+
+To get your IP Address, use the following command
+```bash
+ipconfig
 ```
 
 ## Onto the finals
